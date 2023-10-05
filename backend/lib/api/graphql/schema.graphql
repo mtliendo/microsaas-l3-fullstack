@@ -1,0 +1,12 @@
+type Recipe @model @auth(rules: [{ allow: owner }]) {
+	id: ID!
+	name: String!
+	coverImageID: String!
+	description: String!
+	ingredients: [String!]
+}
+
+type User @model @auth(rules: [{ allow: owner }]) {
+	id: ID!
+	stripeID: String
+}
